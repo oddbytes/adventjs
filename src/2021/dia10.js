@@ -1,14 +1,9 @@
-export default function contains(store, product) {
-  let found = false;
-  for (const key in store) {
-    if (Object.prototype.hasOwnProperty.call(store, key)) {
-      const element = store[key];
-      if (typeof element === "string") {
-        if (element === product) return true;
-      } else {
-        found = found || contains(element, product);
-      }
-    }
-  }
-  return found;
+export default function getCoins(change) {
+  const coins = [50, 20, 10, 5, 2, 1];
+  const c = coins.map((c) => {
+    const n = Math.floor(change / c);
+    change -= n * c;
+    return n;
+  });
+  return c.reverse();
 }
