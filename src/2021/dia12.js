@@ -6,5 +6,5 @@ function getMinJump(obstacles) {
   //   .map((x) => x + 1)
   //   .filter((n) => !obstacles.some((o) => o % n == 0)));
 
-  for (let s = 2; s < 10; s++) if (!obstacles.some((o) => o % s == 0)) return s;
+  for (let s = 2; s < 11; s++) if (obstacles.every((o) => o % s == 0)) return s;
 }
