@@ -3,10 +3,7 @@ function learn(time, courses) {
   const comb = courses.map((c, i) => courses.slice(i + 1).map((c2) => c + c2));
   //Encontrar la combinacion mas cercana a la buscada
   const max = Math.max(
-    ...comb
-      .flat()
-      .filter((n) => n <= time) //Fuera combinaciones que superen las horas
-      .sort((a, b) => a - b)
+    ...comb.flat().filter((n) => n <= time) //Fuera combinaciones que superen las horas
   );
   //Buscar los indices de la mejor combinacion de horas
   for (let i = 0; i < comb.length; i++)
